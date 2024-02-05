@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Epilogue } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/components/ui/layout/sidebar";
+import Header from "@/components/ui/layout/header";
 
 // const epilogue = Epilogue({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
                 </div>
                 <div className="col-span-3 lg:col-span-5 overflow-auto lg:border-l w-[82%]">
                   <div className="px-6 py-6 lg:px-8">
-                    <div>Header</div>
+                    <Header />
                     {children}
                   </div>
                 </div>
