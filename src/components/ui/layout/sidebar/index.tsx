@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Button } from "../../button";
+import Link from "next/link";
 import {
   RxHome,
   RxEnvelopeClosed,
@@ -23,56 +24,74 @@ const SideBar: FC<SideBarProps> = ({}) => {
           </h2>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none hover:text-primary"
             >
-              <RxHome className="mr-2 text-lg" />
-              Home
+              <Link href={"/"}>
+                <RxHome className="mr-2 text-lg" />
+                Home
+              </Link>
             </Button>
           </div>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none  hover:text-primary"
             >
-              <RxEnvelopeClosed className="mr-2 text-lg" />
-              Messages
+              <Link href={"/"}>
+                <RxEnvelopeClosed className="mr-2 text-lg" />
+                Messages
+              </Link>
             </Button>
           </div>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none  hover:text-primary"
             >
-              <RxCube className="mr-2 text-lg" />
-              Company Profile
+              <Link href={"/"}>
+                <RxCube className="mr-2 text-lg" />
+                Company Profile
+              </Link>
             </Button>
           </div>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none  hover:text-primary"
             >
-              <RxFace className="mr-2 text-lg" />
-              Applicants
+              <Link href={"/"}>
+                <RxFace className="mr-2 text-lg" />
+                Applicants
+              </Link>
             </Button>
           </div>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none  hover:text-primary"
             >
-              <RxBackpack className="mr-2 text-lg" />
-              Job Listings
+              <Link href={"/"}>
+                <RxBackpack className="mr-2 text-lg" />
+                Job Listings
+              </Link>
             </Button>
           </div>
           <div className="space-y-3">
             <Button
+              asChild
               variant={"ghost"}
               className="w-full justify-start rounded-none  hover:text-primary"
             >
-              <RxCalendar className="mr-2 text-lg" />
-              My Schedules
+              <Link href={"/"}>
+                <RxCalendar className="mr-2 text-lg" />
+                My Schedules
+              </Link>
             </Button>
           </div>
         </div>
@@ -83,20 +102,26 @@ const SideBar: FC<SideBarProps> = ({}) => {
         </h2>
         <div className="space-y-3">
           <Button
+            asChild
             variant={"ghost"}
             className="w-full justify-start rounded-none hover:text-primary"
           >
-            <RxGear className="mr-2 text-lg" />
-            Settings
+            <Link href={"/"}>
+              <RxGear className="mr-2 text-lg" />
+              Settings
+            </Link>
           </Button>
         </div>
         <div className="space-y-3">
           <Button
+            asChild
             variant={"ghost"}
             className="w-full justify-start rounded-none text-red-700 hover:text-red-500"
           >
-            <RxExit className="mr-2 text-lg" />
-            Log Out
+            <Link href={"/"}>
+              <RxExit className="mr-2 text-lg" />
+              Log Out
+            </Link>
           </Button>
         </div>
       </div>
