@@ -8,8 +8,8 @@ export const JobFormSchema = z.object({
   jobType: z.enum(JOB_TYPES, {
     required_error: "You need to select a job type",
   }),
-  sallaryFrom: z.string({ required_error: "Salary from is required" }),
-  sallaryTo: z.string({ required_error: "Salary to is required" }),
+  salaryFrom: z.string({ required_error: "Salary from is required" }),
+  salaryTo: z.string({ required_error: "Salary to is required" }),
   categoryId: z.string({ required_error: "You need to select a category" }),
   skills: z
     .string()
