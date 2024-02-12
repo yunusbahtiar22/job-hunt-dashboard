@@ -1,4 +1,5 @@
 import React, { FC, InputHTMLAttributes, ReactNode } from "react";
+import { Separator } from "../../separator";
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   children?: ReactNode;
@@ -13,13 +14,16 @@ const InputField: FC<InputFieldProps> = ({
   ...props
 }) => {
   return (
-    <div className="flex flex-row items-start">
-      <div className="w-[35%]">
-        <h4 className="font-semibold">{header}</h4>
-        <p className="text-gray-500 w-80">{text}</p>
+    <>
+      <div className="flex flex-row items-start">
+        <div className="w-[35%]">
+          <h4 className="font-semibold">{header}</h4>
+          <p className="text-gray-500 w-80">{text}</p>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+      <Separator />
+    </>
   );
 };
 
