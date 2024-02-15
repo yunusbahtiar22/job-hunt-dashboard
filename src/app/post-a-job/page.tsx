@@ -21,15 +21,38 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import CKEditor from "@/components/ui/ckeditor";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import InputField from "@/components/ui/layout/form/field-input";
 import SkillSelect from "@/components/ui/skill-select";
 import { RxArrowLeft } from "react-icons/rx";
 import { JOB_TYPES } from "../constants";
+import CKEditor from "@/components/ui/editor";
 
 interface PostJobPageProps {}
+
+const fieldWithEditors = [
+  {
+    header: "Job Descriptions",
+    text: "Desribe your role",
+    name: "jobDescriptions",
+  },
+  {
+    header: "Responsibilities",
+    text: "Outline the core responsibilites of the position",
+    name: "responsibilities",
+  },
+  {
+    header: "Who You Are",
+    text: "Add preferred candidates qualification",
+    name: "whoYouAre",
+  },
+  {
+    header: "Nice-To-haves",
+    text: "Add nice-to-haves skills for the role to encourage a more diverse set of candidates to apply",
+    name: "niceToHaves",
+  },
+];
 
 const PostJobPage: FC<PostJobPageProps> = ({}) => {
   const [editorLoaded, setEditorLoaded] = useState<boolean>(false);
@@ -184,43 +207,11 @@ const PostJobPage: FC<PostJobPageProps> = ({}) => {
           <InputField header="Skills" text="Add required skills for this role">
             <SkillSelect form={form} name="skills" label="Skills" />
           </InputField>
-          <InputField header="Job Descriptions" text="Desribe your role">
-            <CKEditor
-              editorLoaded={editorLoaded}
-              form={form}
-              name="jobDescription"
-            />
-          </InputField>
-          <InputField
-            header="Responsibilities"
-            text="Outline the core responsibilites of the position"
-          >
-            <CKEditor
-              editorLoaded={editorLoaded}
-              form={form}
-              name="responsibilities"
-            />
-          </InputField>
-          <InputField
-            header="Who you are"
-            text="Add preferred candidates qualification"
-          >
-            <CKEditor
-              editorLoaded={editorLoaded}
-              form={form}
-              name="whoYouAre"
-            />
-          </InputField>
-          <InputField
-            header="Nice-to-haves"
-            text="Add nice-to-haves skills for the role to encourage a more diverse set of candidates to apply"
-          >
-            <CKEditor
-              editorLoaded={editorLoaded}
-              form={form}
-              name="niceToHaves"
-            />
-          </InputField>
+          {fieldWithEditors.map(({ header, text, name }) => (
+            <InputField key={header} header={header} text={text}>
+              <CKEditor editorLoaded={editorLoaded} form={form} name={name} />
+            </InputField>
+          ))}
         </form>
       </Form>
     </div>
